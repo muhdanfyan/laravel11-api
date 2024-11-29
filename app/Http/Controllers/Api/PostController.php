@@ -19,6 +19,38 @@ use Illuminate\Support\Facades\Validator;
 //import facade Storage
 use Illuminate\Support\Facades\Storage;
 
+use OpenApi\Annotations as OA;
+
+/**
+ * @OA\PathItem(
+ *     path="/posts",
+ *     @OA\Get(
+ *         summary="Mengambil daftar post",
+ *         @OA\Response(
+ *             response="200",
+ *             description="Daftar post berhasil diambil",
+ *             @OA\JsonContent(
+ *                 @OA\Property(
+ *                     property="id",
+ *                     type="integer",
+ *                     description="ID post"
+ *                 ),
+ *                 @OA\Property(
+ *                     property="title",
+ *                     type="string",
+ *                     description="Judul post"
+ *                 ),
+ *                 @OA\Property(
+ *                     property="content",
+ *                     type="string",
+ *                     description="Konten post"
+ *                 )
+ *             )
+ *         )
+ *     )
+ * )
+ */
+
 class PostController extends Controller
 {
     /**
